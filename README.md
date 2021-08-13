@@ -2,4 +2,4 @@
 
 A new Flutter project.
 
-Client Web: https://pantrycheck.com/
+Website: https://pantrycheck.com/
