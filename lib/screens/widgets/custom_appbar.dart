@@ -23,7 +23,13 @@ CupertinoNavigationBar customAppbar(BuildContext context, String? title) {
             color: Theme.of(context).primaryColor,
           ),
         ),
-        TextButton(onPressed: () {}, child: Text('Edit')),
+        InkWell(
+          onTap: () {},
+          child: Text(
+            'Edit',
+            style: TextStyle(color: Theme.of(context).primaryColor),
+          ),
+        ),
       ],
     ),
   );
