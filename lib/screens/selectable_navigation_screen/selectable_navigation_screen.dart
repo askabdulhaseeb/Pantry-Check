@@ -1,8 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pantrycheck/screens/pages/expiring_page/expiring_page.dart';
 import 'package:pantrycheck/screens/pages/inventory_page/intentory_page.dart';
 import 'package:pantrycheck/screens/pages/shopping_page/shopping_page.dart';
 import 'package:pantrycheck/screens/pages/timeline_page/timeline_page.dart';
+import 'package:pantrycheck/screens/widgets/custom_appbar.dart';
 import 'bottom_navigation_bar_widget.dart';
 
 class SelectableNavigationScreen extends StatefulWidget {
@@ -31,7 +33,16 @@ class _SelectableNavigationScreenState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: homeAppBar(context),
+      appBar: customAppbar(
+        context,
+        (_selectedIndex == 0)
+            ? 'Inventory'
+            : (_selectedIndex == 1)
+                ? 'Shopping'
+                : (_selectedIndex == 2)
+                    ? 'Expering'
+                    : 'Timeline',
+      ),
       bottomNavigationBar: BottomNavigationBarWidget(onTab: _onItemTapped),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
