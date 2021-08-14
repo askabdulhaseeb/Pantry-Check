@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pantrycheck/screens/pages/expiring_page/expiring_page.dart';
-import 'package:pantrycheck/screens/pages/inventory_page/intentory_page.dart';
+import 'package:pantrycheck/screens/pages/food_page/food_page.dart';
+import 'package:pantrycheck/screens/pages/recipes_page/recipes_page.dart';
 import 'package:pantrycheck/screens/pages/shopping_page/shopping_page.dart';
-import 'package:pantrycheck/screens/pages/timeline_page/timeline_page.dart';
 import 'package:pantrycheck/screens/widgets/custom_appbar.dart';
 import 'bottom_navigation_bar_widget.dart';
 
@@ -24,28 +23,31 @@ class _SelectableNavigationScreenState
   }
 
   static final List<Widget> _widgetOptions = <Widget>[
-    const InventoryPage(),
+    const FoodPage(),
     const ShoppingPage(),
-    const ExpiringPage(),
-    const TimelinePage(),
+    const RecipesPage(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppbar(
-        context,
-        (_selectedIndex == 0)
-            ? 'Inventory'
-            : (_selectedIndex == 1)
-                ? 'Shopping'
-                : (_selectedIndex == 2)
-                    ? 'Expering'
-                    : 'Timeline',
-      ),
+          context,
+          (_selectedIndex == 0)
+              ? 'Food'
+              : (_selectedIndex == 1)
+                  ? 'Shopping'
+                  : 'Recipes'),
       bottomNavigationBar: BottomNavigationBarWidget(onTab: _onItemTapped),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(
+          Icons.edit,
+          color: Theme.of(context).scaffoldBackgroundColor,
+        ),
       ),
     );
   }

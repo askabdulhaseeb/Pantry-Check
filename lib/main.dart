@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pantrycheck/screens/pages/expiring_page/expiring_page.dart';
-import 'package:pantrycheck/screens/pages/inventory_page/intentory_page.dart';
-import 'package:pantrycheck/screens/pages/shopping_page/shopping_page.dart';
-import 'package:pantrycheck/screens/pages/timeline_page/timeline_page.dart';
-import 'package:pantrycheck/screens/selectable_navigation_screen/selectable_navigation_screen.dart';
+import 'screens/pages/recipes_page/recipes_page.dart';
+import 'screens/pages/shopping_page/shopping_page.dart';
+import 'screens/selectable_navigation_screen/selectable_navigation_screen.dart';
+import 'screens/pages/food_page/food_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,17 +14,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.amber[900],
+        primarySwatch: Colors.deepOrange,
       ),
       home: SelectableNavigationScreen(),
       routes: {
         SelectableNavigationScreen.routeName: (_) =>
             SelectableNavigationScreen(),
         //Pages
-        InventoryPage.routeName: (_) => const InventoryPage(),
+        FoodPage.routeName: (_) => const FoodPage(),
         ShoppingPage.routeName: (_) => const ShoppingPage(),
-        ExpiringPage.routeName: (_) => const ExpiringPage(),
-        TimelinePage.routeName: (_) => const TimelinePage(),
+        RecipesPage.routeName: (_) => const RecipesPage(),
       },
     );
   }

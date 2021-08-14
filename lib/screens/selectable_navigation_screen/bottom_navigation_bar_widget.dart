@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigationBarWidget extends StatefulWidget {
@@ -30,20 +31,16 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
       currentIndex: _selectedIndex,
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.inventory),
-          label: 'Inventory',
+          icon: Icon(Icons.tapas_outlined),
+          label: 'Food',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.shopping_cart_outlined),
+          icon: Icon(CupertinoIcons.cart),
           label: 'Shopping',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.share_arrival_time_rounded),
-          label: 'Expiring',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.timeline),
-          label: 'Timeline',
+          icon: Icon(Icons.outdoor_grill_outlined),
+          label: 'Recipes',
         ),
       ],
     );
